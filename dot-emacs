@@ -1,0 +1,28 @@
+(require 'cl)
+
+;; Keep everything under ~/emacs rather than .emacs.d
+(defvar emacs-root (if (or (eq system-type 'cygwin)
+			   (eq system-type 'gnu/linux)
+			   (eq system-type 'linux))
+		       "/home/mts/"
+		     "c:/home/mts")
+"My home directory - root of personal emacs load path.")
+
+;; add all dirs under emacs-root to the load path
+(labels ((add-path (p)
+		   (add-to-list 'load-path
+				(concat emacs-root p))))
+  (add-path "emacs/lisp")
+  (add-path "emacs/site-lisp"))
+
+(load-library "ekeys") ;; personal key customizations
+(load-library "my-config")
+(load-library "xml-config")
+(load-library "efuncs") ;; utility functions
+(load-library "slime-config")
+
+(autoload 'python-mode "python-mode.el" "Python mode." t)
+(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
+
+;; load go-mode
+(require 'go-mode-load)
