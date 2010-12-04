@@ -30,3 +30,10 @@
 	(delete-file filename)
 	(set-visited-file-name newname)
 	(set-buffer-modified-p nil) t))))
+
+;; if visiting a file, save the buffer's content to that file (used for auto-save)
+(defun save-if-visiting-file (&optional args)
+  "Save the current buffer only if it's visiting a file"
+  (interactive)
+  (if (and (buffer-file-name) (buffer-modified-p))
+      (save-buffer args)))
