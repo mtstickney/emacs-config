@@ -22,7 +22,10 @@
 (load-library "slime-config")
 
 (autoload 'python-mode "python-mode.el" "Python mode." t)
-(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("/*.\.py$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+(add-hook 'org-mode-hook 'turn-on-font-lock)
 
 ;; load go-mode
 (require 'go-mode-load)
