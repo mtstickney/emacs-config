@@ -13,7 +13,8 @@
 		   (add-to-list 'load-path
 				(concat emacs-root p))))
   (add-path "emacs/lisp")
-  (add-path "emacs/site-lisp"))
+  (add-path "emacs/site-lisp")
+  (add-path "emacs/site-lisp/org/lisp"))
 
 (load-library "ekeys") ;; personal key customizations
 (load-library "my-config")
@@ -25,9 +26,10 @@
 (add-to-list 'auto-mode-alist '("/*.\.py$" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
+;; load org-mode
+(require 'org-install)
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 (add-hook 'auto-save-hook 'save-if-visiting-file)
-(global-hl-line-mode 1)
 
 ;; load go-mode
 (require 'go-mode-load)
