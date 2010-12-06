@@ -28,3 +28,11 @@
 
 ;; Add a timestamp when TODO items are finished in org-mode
 (setq org-log-done t)
+
+;; Use tabs instead of spaces. Messes with styles, but that's what our other editors are doing.
+(setq indent-tabs-mode t)
+(setq-default indent-tabs-mode t)
+(global-set-key (kbd "TAB") 'self-insert-command)
+(setq default-tab-width 8)
+(setq tab-width 8)
+(setq c-basic-indent 8)
