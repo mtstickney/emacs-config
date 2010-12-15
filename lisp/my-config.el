@@ -32,6 +32,13 @@
 (setq org-directory "~/Dropbox")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; enable autopairs
+(require 'autopair)
+(autopair-global-mode)
+
+;; better buffer switcher
+(iswitchb-mode 1)
+
 ;; Use tabs instead of spaces. Messes with styles, but that's what our other editors are doing.
 ;; CURRENTLY BREAKS TAB COMPLETION
 ;; (setq indent-tabs-mode t)

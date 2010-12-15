@@ -23,7 +23,8 @@
 (load-library "slime-config")
 
 (autoload 'python-mode "python-mode.el" "Python mode." t)
-(add-to-list 'auto-mode-alist '("/*.\.py$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 ;; load org-mode
