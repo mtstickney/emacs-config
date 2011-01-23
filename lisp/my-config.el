@@ -59,3 +59,9 @@
 ;; (setq default-tab-width 8)
 ;; (setq tab-width 8)
 ;; (setq c-basic-indent 8)
+
+;; Variables for org-mode jounraling (see org-journal-entry in efuncs.el)
+(defvar org-journal-file "~/Dropbox/journal.org"
+  "Path to org-mode journal file.")
+(defvar org-journal-date-format "%d-%m-%Y"
+  "Date format for journal headings")
