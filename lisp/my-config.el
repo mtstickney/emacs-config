@@ -12,12 +12,15 @@
 ;; stop making those annoying file~ files)
 (setq make-backup-files nil)
 
-;; hilight the current line
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "light grey")
+;; hilight the current line if in graphical display (can't see the cursor with terminal colors)
+(if (display-graphic-p)
+    (progn
+      (global-hl-line-mode t)
+      (set-face-background 'hl-line "light grey")))
 
-;; display line numbers
-(global-linum-mode 1)
+;; display line and col numbers
+(setq global-linum-mode t)
+(setq column-number-mode t)
 
 ;; Auto save more often so we don't have to
 (setq auto-save-timeout 3)
