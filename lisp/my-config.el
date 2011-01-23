@@ -35,12 +35,21 @@
 (setq org-directory "~/Dropbox")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; Insert new org-mode heading after current content body
+(setq org-insert-heading-respect-content t)
+
 ;; enable autopairs
 (require 'autopair)
 (autopair-global-mode)
 
 ;; better buffer switcher
-(iswitchb-mode 1)
+(iswitchb-mode t)
+
+;; always use a trailing newline
+(setq require-final-newline t)
+
+;; don't put blank lines in front of headings and lists
+(setq org-blank-before-new-entry '((heading) (plain-list-item)))
 
 ;; Use tabs instead of spaces. Messes with styles, but that's what our other editors are doing.
 ;; CURRENTLY BREAKS TAB COMPLETION
