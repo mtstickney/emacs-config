@@ -37,3 +37,26 @@
   (interactive)
   (if (and (buffer-file-name) (buffer-modified-p))
       (save-buffer args)))
+
+;; Function to open a daily journal entry in org-mode
+;; Uses org-journal-file and org-journal-date-format variables
+;; (see http://metjack.im/2009/01/01/journaling-with-emacs-orgmode/)
+(defun org-journal-entry ()
+  "Create a new diary entry for today or append to an existing one"
+  (interactive)
+  (switch-to-buffer (find-file org-journal-file))
+  (widen)
+  (let ((today (format-time-string org-journal-date-format)))
+    (beginning-of-buffer)
+    (unless (org-goto-local-search-headings today nil t)
+      ((lambda ()
+	 (end-of-buffer)
+	 (org-insert-heading-respect-content)
+	 (insert today)
+	 (insert "\n\n  "))))
+    (org-show-entry)
+    (org-narrow-to-subtree)
+    (end-of-buffer)
+    (backward-char 1)
+    (unless (= (current-column) 2)
+      (insert "\n\n  "))))

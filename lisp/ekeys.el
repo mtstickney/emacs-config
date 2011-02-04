@@ -9,3 +9,4 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (define-key global-map "\C-cc" 'org-capture)
+(define-key global-map "\C-cj" 'org-journal-entry)
