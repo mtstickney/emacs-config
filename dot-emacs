@@ -32,5 +32,9 @@
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 (add-hook 'auto-save-hook 'save-if-visiting-file)
 
+;; use auto-fill-mode for text-mode files
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ;; load go-mode
 (require 'go-mode-load)
