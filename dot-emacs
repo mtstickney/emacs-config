@@ -1,9 +1,14 @@
+;-*-lisp-*-
 (require 'cl)
 
+(defconst *on-windows* 
+  (not (or
+	(eq system-type 'cygwin)
+	(eq system-type 'gnu/linux)
+	(eq system-type 'linux))))
+
 ;; Keep everything under ~/emacs rather than .emacs.d
-(defvar emacs-root (if (or (eq system-type 'cygwin)
-			   (eq system-type 'gnu/linux)
-			   (eq system-type 'linux))
+(defvar emacs-root (if (not *on-windows*)
 		       "/home/mts/"
 		     "c:/home/mts")
 "My home directory - root of personal emacs load path.")
@@ -14,7 +19,8 @@
 				(concat emacs-root p))))
   (add-path "emacs/lisp")
   (add-path "emacs/site-lisp")
-  (add-path "emacs/site-lisp/org/lisp"))
+  (add-path "emacs/site-lisp/org/lisp")
+  (add-path "emacs/site-lisp/nxml-mode"))
 
 (load-library "ekeys") ;; personal key customizations
 (load-library "my-config")
