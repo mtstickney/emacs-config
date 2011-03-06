@@ -1,5 +1,4 @@
-(set 'nxml-path "/home/mts/emacs/site-lisp/nxml-mode/")
-(load (concat nxml-path "rng-auto.el"))
+(load-library "rng-auto")
 
 (add-to-list 'auto-mode-alist
 	     (cons (concat "\\." (regexp-opt '("xml" "xsd" "sch" "rng" "xslt" "svg" "rss" "gsmarkup") t) "\\'") 
