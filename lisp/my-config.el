@@ -32,7 +32,7 @@
 (setq org-log-done t)
 
 ;; Use Dropbox for default org directory
-(setq org-directory "~/Dropbox")
+(setq org-directory "~/sync")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ;; Insert new org-mode heading after current content body
