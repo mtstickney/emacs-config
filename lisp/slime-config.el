@@ -1,8 +1,8 @@
+;; NOTE: the slime-helper.el does autoloads on its own
 (if *on-windows*
     (progn
       (setq inferior-lisp-program "clisp.exe")
       (load "C:\\quicklisp\\slime-helper.el"))
   (progn
-    (require 'slime)
     (setq inferior-lisp-program "/usr/bin/sbcl")
-    (slime-setup '(slime-repl))))
+    (load (expand-file-name "~/quicklisp/slime-helper.el"))))
