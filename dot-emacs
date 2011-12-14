@@ -1,5 +1,6 @@
 ;-*-lisp-*-
 (require 'cl)
+(defvar *emacs-start-time* (current-time))
 
 (defconst *on-windows* 
   (not (or
@@ -44,3 +45,7 @@
 
 ;; load go-mode
 (require 'go-mode-load)
+
+(message ".emacs loaded in %ds"
+	 (destructuring-bind (hi lo ms) (current-time)
+	   (- (+ hi lo) (+ (first *emacs-start-time*) (second *emacs-start-time*)))))
