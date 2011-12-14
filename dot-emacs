@@ -21,7 +21,10 @@
   (add-path "emacs/lisp")
   (add-path "emacs/site-lisp")
   (add-path "emacs/site-lisp/org/lisp")
-  (add-path "emacs/site-lisp/nxml-mode"))
+  (add-path "emacs/site-lisp/nxml-mode")
+  (add-path "emacs/site-lisp/slime")
+  (add-path "emacs/site-lisp/color-theme")
+  (add-path "emacs/site-lisp/emacs-color-theme-solarized"))
 
 (load-library "ekeys") ;; personal key customizations
 (load-library "my-config")

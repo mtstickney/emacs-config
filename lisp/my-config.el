@@ -50,6 +50,15 @@
 
 ;; don't put blank lines in front of headings and lists
 (setq org-blank-before-new-entry '((heading) (plain-list-item)))
+;; Solarized colors
+(if window-system
+    (progn
+      (require 'color-theme)
+      (require 'color-theme-solarized)
+      (eval-after-load "color-theme"
+	'(progn
+	   (color-theme-initialize)
+	   (color-theme-solarized-light)))))
 
 ;; Use tabs instead of spaces. Messes with styles, but that's what our other editors are doing.
 ;; CURRENTLY BREAKS TAB COMPLETION
