@@ -94,7 +94,6 @@ to a new line."
       (eval-after-load "color-theme"
 	'(progn
 	   (color-theme-initialize)
-fg
 (color-theme-solarized-light)))))
 
 ;; Use tabs instead of spaces. Messes with styles, but that's what our other editors are doing.
