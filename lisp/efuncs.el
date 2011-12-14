@@ -61,3 +61,9 @@
       (backward-char 1)
       (unless (= (current-column) 2)
 	(insert "\n  --\n\n  ")))))
+
+;; Generate a new org-mode latex class, based on "article" by default
+(defun new-org-latex-class (name doc-class &optional rest)
+  (let* ((article-body (cddr (car org-export-latex-classes)))
+	 (body (if rest rest article-body)))
+    (cons name (cons doc-class body))))
