@@ -25,4 +25,11 @@
     (defvar org-journal-file "~/sync/journal.org"
       "Path to org-mode journal file.")
     (defvar org-journal-date-format "%d-%m-%Y"
-      "Date format for journal headings")))
+      "Date format for journal headings")
+    ;; Use latexmk to export latex files, so bibtex etc. gets run
+    (setq org-latex-to-pdf-process '("latexmk -pdf -cd %f"))
+
+    ;; Use the listings package to export code listings
+    (require 'org-latex)
+    (setq org-export-latex-listings t)
+    (add-to-list 'org-export-latex-packages-alist '("" "listings"))))
