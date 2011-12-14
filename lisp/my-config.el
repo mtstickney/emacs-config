@@ -26,14 +26,7 @@
 (setq auto-save-timeout 3)
 (setq auto-save-interval 100)
 
-;; use org-mode if no other mode matches (instead of fundamental)
-(setq-default major-mode 'org-mode)
-;; Add a timestamp when TODO items are finished in org-mode
-(setq org-log-done t)
 
-;; Use Dropbox for default org directory
-(setq org-directory "~/sync")
-(setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ;; Autopairs handled by ParEdit now
 ;; ;; enable autopairs
@@ -41,8 +34,6 @@
 ;; (autopair-global-mode)
 ;; ;; Workaround for autopair+slime debug issue
 ;; (add-hook 'sldb-mode-hook #'(lambda () (setq autopair-dont-activate t)))
-;; Insert new org-mode heading after current content body
-(setq org-insert-heading-respect-content t)
 
 ;; electric return for ParEdit
 (defvar electrify-return-match
@@ -95,8 +86,14 @@ to a new line."
 ;; always use a trailing newline
 (setq require-final-newline t)
 
-;; don't put blank lines in front of headings and lists
-(setq org-blank-before-new-entry '((heading) (plain-list-item)))
+;; Use latexmk to export latex files, so bibtex etc. gets run
+(setq org-latex-to-pdf-process '("latexmk -pdf -cd %f"))
+
+;; Use the listings package to export code listings
+(require 'org-latex)
+(setq org-export-latex-listings t)
+(add-to-list 'org-export-latex-packages-alist '("" "listings"))
+
 ;; Solarized colors
 (if window-system
     (progn
@@ -105,7 +102,8 @@ to a new line."
       (eval-after-load "color-theme"
 	'(progn
 	   (color-theme-initialize)
-	   (color-theme-solarized-light)))))
+fg
+(color-theme-solarized-light)))))
 
 ;; Use tabs instead of spaces. Messes with styles, but that's what our other editors are doing.
 ;; CURRENTLY BREAKS TAB COMPLETION
@@ -115,9 +113,3 @@ to a new line."
 ;; (setq default-tab-width 8)
 ;; (setq tab-width 8)
 ;; (setq c-basic-indent 8)
-
-;; Variables for org-mode jounraling (see org-journal-entry in efuncs.el)
-(defvar org-journal-file "~/Dropbox/journal.org"
-  "Path to org-mode journal file.")
-(defvar org-journal-date-format "%d-%m-%Y"
-  "Date format for journal headings")
