@@ -35,9 +35,11 @@
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
 ;; load org-mode
-(require 'org-install)
-(add-hook 'org-mode-hook 'turn-on-font-lock)
-(add-hook 'auto-save-hook 'save-if-visiting-file)
+;; (require 'org-install)
+(eval-after-load "org-install"
+  (progn
+    (add-hook 'org-mode-hook 'turn-on-font-lock)
+    (add-hook 'auto-save-hook 'save-if-visiting-file)))
 
 ;; use auto-fill-mode for text-mode files
 (setq-default fill-column 80)
