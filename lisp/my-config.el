@@ -35,12 +35,59 @@
 (setq org-directory "~/sync")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+;; Autopairs handled by ParEdit now
+;; ;; enable autopairs
+;; (require 'autopair)
+;; (autopair-global-mode)
+;; ;; Workaround for autopair+slime debug issue
+;; (add-hook 'sldb-mode-hook #'(lambda () (setq autopair-dont-activate t)))
 ;; Insert new org-mode heading after current content body
 (setq org-insert-heading-respect-content t)
 
-;; enable autopairs
-(require 'autopair)
-(autopair-global-mode)
+;; electric return for ParEdit
+(defvar electrify-return-match
+  "[\]}\)\"]"
+  "If this regexp matches the text after the cursor, do an \"electric\" return.")
+
+(defun electrify-return-if-match (arg)
+  "If the text after the cursor matches `electrify-return-match' then open
+and indent and empty line between the cursor and the text. Move the cursor
+to a new line."
+  (interactive "P")
+  (let ((case-fold-search nil))
+    (if (looking-at electrify-return-match)
+	(save-excursion (newline-and-indent)))
+    (newline arg)
+    (indent-according-to-mode)))
+
+;; Modifications to make in SEXPR modes
+;; - Turns on paredit mode, eldoc mode, and show-paren mode
+;; - Tells eldoc to refresh on paredit commands
+;; - Enables electric return
+(defun sexpr-mode-mods ()
+  (paredit-mode t)
+  (turn-on-eldoc-mode)
+  (eldoc-add-command
+   'paredit-backward-delete
+   'paredit-close-round)
+
+  (local-set-key (kbd "RET") 'electrify-return-if-match)
+  (eldoc-add-command 'electrify-return-if-match)
+
+  (show-paren-mode t))
+
+;; Enable paredit for SEXPR editing
+(autoload 'paredit-mode "paredit"
+  "Minor mode for pseudo-structurally editing Lisp code." t)
+(loop for hook in
+      '(emacs-lisp-mode-hook lisp-mode-hook lisp-interaction-mode-hook scheme-mode-hook slime-repl-mode-hook)
+      do (add-hook hook #'sexpr-mode-mods))
+
+;; Stop SLIME from grabbing DEL, which interferes with paredit
+(defun override-slime-repl-bindings-with-paredit ()
+  (define-key slime-repl-mode-map
+    (read-kbd-macro paredit-backward-delete-key) nil))
+(add-hook 'slime-repl-mode-hook #'override-slime-repl-bindings-with-paredit)
 
 ;; better buffer switcher
 (iswitchb-mode t)
