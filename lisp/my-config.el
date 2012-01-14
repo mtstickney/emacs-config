@@ -26,8 +26,6 @@
 (setq auto-save-timeout 3)
 (setq auto-save-interval 100)
 
-
-
 ;; Autopairs handled by ParEdit now
 ;; ;; enable autopairs
 ;; (require 'autopair)
@@ -71,7 +69,7 @@ to a new line."
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)
 (loop for hook in
-      '(emacs-lisp-mode-hook lisp-mode-hook lisp-interaction-mode-hook scheme-mode-hook slime-repl-mode-hook)
+      '(emacs-lisp-mode-hook lisp-mode-hook lisp-interaction-mode-hook scheme-mode-hook slime-repl-mode-hook clojure-mode-hook)
       do (add-hook hook #'sexpr-mode-mods))
 
 ;; Stop SLIME from grabbing DEL, which interferes with paredit

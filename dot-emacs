@@ -37,6 +37,10 @@
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
+;; Clojure-mode setup
+(autoload 'clojure-mode "clojure-mode.el" "Clojure mode" t)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+
 ;; load org-mode
 ;; (require 'org-install)
 (eval-after-load "org-install"
