@@ -1,8 +1,6 @@
 ;; Org-Mode junk (doesn't get loaded until after org-mode)
 (eval-after-load "org-install"
   (progn
-    ;; use org-mode if no other mode matches (instead of fundamental)
-    (setq-default major-mode 'org-mode)
     ;; Add a timestamp when TODO items are finished in org-mode
     (setq org-log-done t)
 

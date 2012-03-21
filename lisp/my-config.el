@@ -102,3 +102,6 @@ to a new line."
 ;; (setq default-tab-width 8)
 ;; (setq tab-width 8)
 ;; (setq c-basic-indent 8)
+
+;; use org-mode if no other mode matches (instead of fundamental)
+(setq-default major-mode 'org-mode)
