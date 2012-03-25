@@ -42,28 +42,6 @@
 ;; Uses org-journal-file and org-journal-date-format variables
 ;; (see http://metajack.im/2009/01/01/journaling-with-emacs-orgmode/)
 (eval-after-load "org-install"
-  (defun org-journal-entry ()
-    "Create a new diary entry for today or append to an existing one"
-    (interactive)
-    (switch-to-buffer (find-file org-journal-file))
-    (widen)
-    (let ((today (format-time-string org-journal-date-format))
-	  (isearch-forward nil))
-      (end-of-buffer)
-      (unless (org-goto-local-search-headings today nil t)
-	((lambda ()
-	   (org-insert-heading-respect-content)
-	   (insert today)
-	   (insert "\n\n  "))))
-      (org-show-entry)
-      (org-narrow-to-subtree)
-      (end-of-buffer)
-      (backward-char 1)
-      (unless (= (current-column) 2)
-	(insert "\n  --\n\n  ")))))
+)
 
-;; Generate a new org-mode latex class, based on "article" by default
-(defun new-org-latex-class (name doc-class &optional rest)
-  (let* ((article-body (cddr (car org-export-latex-classes)))
-	 (body (if rest rest article-body)))
-    (cons name (cons doc-class body))))
+(provide 'bodhi-core)
