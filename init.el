@@ -3,7 +3,7 @@
 (require 'cl)
 
 (message "Bodhi approaches... Patience, %s."
-	 (getenv "USER"))
+         (getenv "USER"))
 
 (defconst *on-windows*
   (or (eq system-type 'ms-dos)
@@ -12,16 +12,16 @@
 ;; Keep everything under ~/emacs instead of .emacs.d
 (defvar bodhi-dir
   (concat (if *on-windows*
-	      "C:/home/mts/"
-	    "/home/mts/")
-	  "emacs/")
+              "C:/home/mts/"
+            "/home/mts/")
+          "emacs/")
   "My home directory - root of all emacs configuration files")
 
 (labels ((add-path (p)
-		   (add-to-list 'load-path
-				(concat bodhi-dir p))))
-	(add-path "modules")
-	(add-path "thirdparty"))
+                   (add-to-list 'load-path
+                                (concat bodhi-dir p))))
+        (add-path "modules")
+        (add-path "thirdparty"))
 
 (require 'bodhi-keybinds) ;; key customizations
 ;; (require 'bodhi-core) ;; utility functions
@@ -36,4 +36,4 @@
 (require 'bodhi-latex)
 
 (message "The flower of awakening unfolds. Proceed with Right Understanding, %s."
-	 (getenv "USER"))
+         (getenv "USER"))

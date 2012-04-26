@@ -8,9 +8,9 @@
 (defun bodhi-frame-config (frame)
   (if (eq system-type 'darwin)
       (with-selected-frame frame
-	(if (display-graphic-p)
-	    (modify-frame-parameters frame '((menu-bar-lines . 1)))
-	  (modify-frame-parameters frame '((menu-bar-lines . 0)))))
+        (if (display-graphic-p)
+            (modify-frame-parameters frame '((menu-bar-lines . 1)))
+          (modify-frame-parameters frame '((menu-bar-lines . 0)))))
     (menu-bar-mode -1)))
 
 ;; configure the current frame...
@@ -44,8 +44,8 @@
 ;; Show the file or buffer name in the frame title
 (setq frame-title-format
       '("" invocation-name " Bodhi - " (:eval (if (buffer-file-name)
-						  (abbreviate-file-name (buffer-file-name))
-						"%b"))))
+                                                  (abbreviate-file-name (buffer-file-name))
+                                                "%b"))))
 
 ;; Load a theme (should be installed by package)
 ;; Use dark variant on terminals
