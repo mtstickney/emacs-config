@@ -52,8 +52,8 @@
 
 ;; Autofill comments
 (defun bodhi-local-comment-autofill ()
-  (set (make-local-variable 'comment-auto-fill-only-comments))
-  (autofill-mode t))
+  (set (make-local-variable 'comment-auto-fill-only-comments) t)
+  (auto-fill-mode t))
 
 ;; Hilight import words in comments
 (defun bodhi-add-watchwords ()
@@ -73,8 +73,8 @@
 
 (defun bodhi-prog-mode-defaults ()
   "Default coding hook, useful with (almost) any programming language"
-  (flyspell-prog-mode t)
-  (bodhi-local-comment-auto-fill)
+  (flyspell-prog-mode)
+  (bodhi-local-comment-autofill)
   (bodhi-add-watchwords)
   ;; Maintain whitespace cleanliness
   (add-hook 'before-save-hook 'whitespace-cleanup nil t))
