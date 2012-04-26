@@ -49,9 +49,11 @@
 
 ;; Load a theme (should be installed by package)
 ;; Use dark variant on terminals
-(load-theme (if (display-graphic-p)
-		'solarized-light
-	      'solarized-dark)
-	    t)
+;; (load-theme (if (display-graphic-p)
+;;              'solarized-light
+;;            'solarized-dark)
+;;          t)
+(if (display-graphic-p)
+    (load-theme 'solarized-light t))
 
 (provide 'bodhi-ui)
