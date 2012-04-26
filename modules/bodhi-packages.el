@@ -5,8 +5,10 @@
 (package-initialize)
 
 (defvar bodhi-packages
-  '(solarized-theme zenburn-theme paredit org auctex python go-mode slime
-		    fill-column-indicator)
+  ;; Note that slime is installed by quicklisp (version in the repo is
+  ;; old)
+  '(solarized-theme zenburn-theme paredit org auctex python go-mode
+                    fill-column-indicator rainbow-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
