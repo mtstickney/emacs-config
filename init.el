@@ -12,7 +12,7 @@
 ;; Keep everything under ~/emacs instead of .emacs.d
 (defvar bodhi-dir
   (concat (if *on-windows*
-              "C:/home/mts/"
+              "C:/Users/mts/"
             "/home/mts/")
           "emacs/")
   "My home directory - root of all emacs configuration files")
