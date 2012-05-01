@@ -116,5 +116,14 @@
 (add-hook 'message-mode-hook 'bodhi-turn-on-flyspell)
 (add-hook 'text-mode-hook 'bodhi-turn-on-flyspell)
 
+;; enable narrowing commands
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
+;; enable change-region-case commands
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
 
 (provide 'bodhi-editor)
