@@ -31,6 +31,18 @@
 ;; Auto-revert buffers when the underlying file changes
 (global-auto-revert-mode t)
 
+;; hippie expand >> dabbrev expand
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+                                         try-expand-dabbrev-all-buffers
+                                         try-expand-dabbrev-from-kill
+                                         try-complete-file-name-partially
+                                         try-complete-file-name
+                                         try-expand-all-abbrevs
+                                         try-expand-list
+                                         try-expand-line
+                                         try-complete-lisp-symbol-partially
+                                         try-complete-lisp-symbol))
+
 ;; Meaningful names for buffers with the same name
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
