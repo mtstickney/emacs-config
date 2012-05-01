@@ -125,5 +125,7 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+(require 'expand-region)
+
 
 (provide 'bodhi-editor)
