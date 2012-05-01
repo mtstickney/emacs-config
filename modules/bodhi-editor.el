@@ -135,5 +135,25 @@
 (add-to-list 'yas/snippet-dirs bodhi-snippets-dir)
 (yas/global-mode 1)
 
+;; projectile is a project management system
+(require 'projectile)
+(projectile-global-mode t)
+
+(require 'helm-misc)
+(require 'helm-projectile)
+
+(defun helm-prelude ()
+  "Preconfigured `helm'."
+  (interactive)
+  (if (projectile-get-project-root)
+      ;; add project files and buffer when in a project
+      (helm-other-buffer '(helm-c-source-projectile-files-list
+                           helm-c-source-projectile-buffers-list
+                           helm-c-source-buffers-list
+                           helm-c-source-recentf
+                           helm-c-source-buffer-not-found)
+                         "*helm-prelude*")
+    ;; otherwise fallback to helm-mini
+    (helm-mini)))
 
 (provide 'bodhi-editor)
