@@ -1,4 +1,9 @@
 ;; Editor behavior customizations file
+;; customization group
+(defgroup editor nil
+  "Emacs Bodhi Editor enhancements"
+  :group 'bodhi)
+
 ;; Tabs and spaces
 (setq-default indent-tabs-mode nil) ;; indent with spaces instead of tabs
 (setq-default tab-width 8)          ;; but make it look ok when tabs are used
