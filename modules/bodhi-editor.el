@@ -130,5 +130,10 @@
 ;; Use autofill for all text and text-like modes
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+;; yasnippet for templates
+(require 'yasnippet)
+(add-to-list 'yas/snippet-dirs bodhi-snippets-dir)
+(yas/global-mode 1)
+
 
 (provide 'bodhi-editor)
