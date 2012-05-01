@@ -127,5 +127,8 @@
 
 (require 'expand-region)
 
+;; Use autofill for all text and text-like modes
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 
 (provide 'bodhi-editor)
