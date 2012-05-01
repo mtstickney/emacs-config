@@ -181,4 +181,7 @@
 (require 're-builder)
 (setq reb-re-syntax 'string)
 
+;; enable Bodhi keybindings
+(bodhi-global-mode t)
+
 (provide 'bodhi-editor)
