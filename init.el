@@ -23,6 +23,8 @@
         (add-path "modules")
         (add-path "thirdparty"))
 
+(defvar bodhi-snippets-dir (concat bodhi-dir "snippets/"))
+
 (require 'bodhi-keybinds) ;; key customizations
 ;; (require 'bodhi-core) ;; utility functions
 ;; (require 'bodhi-modes) ;; Mode customizations
