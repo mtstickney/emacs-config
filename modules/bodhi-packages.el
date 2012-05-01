@@ -1,7 +1,8 @@
 ;; Packages setup and customization
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(dolist (repo '(("marmalade" . "http://marmalde-repo.org/packages/")
+		("melpa" . "http://melpa.milkbox.net/packages/")))
+  (add-to-list 'package-archives repo t))
 (package-initialize)
 
 (defvar bodhi-packages
