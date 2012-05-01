@@ -168,6 +168,8 @@
 ;; don't start a new frame for ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;; auto-cleanup obsolete buffers
+(require 'midnight)
 
 ;; abbrev setup
 (add-hook 'text-mode-hook 'bodhi-turn-on-abbrev)
