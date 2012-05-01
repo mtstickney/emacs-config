@@ -71,13 +71,22 @@
 ;;       (add-hook 'bodhi-prog-mode-hook 'my-prog-mode-mods t)
 ;; (the final 't' sets the *append* argument)
 
+(defun bodhi-whitespace-cleanup ()
+  "Call whitespace-cleanup unless this is a Makefile."
+  (interactive)
+  (unless (or (eq major-mode 'makefile-mode)
+              (eq major-mode 'makefile-gmake-mode)
+              (eq major-mode 'makefile-automake-mode)
+              (eq major-mode 'makefile-bsdmake-mode))
+    (whitespace-cleanup)))
+
 (defun bodhi-prog-mode-defaults ()
   "Default coding hook, useful with (almost) any programming language"
   (flyspell-prog-mode)
   (bodhi-local-comment-autofill)
   (bodhi-add-watchwords)
   ;; Maintain whitespace cleanliness
-  (add-hook 'before-save-hook 'whitespace-cleanup nil t))
+  (add-hook 'before-save-hook 'bodhi-whitespace-cleanup nil t))
 
 (setq bodhi-prog-mode-hook 'bodhi-prog-mode-defaults)
 
