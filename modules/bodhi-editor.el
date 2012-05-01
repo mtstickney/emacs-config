@@ -175,4 +175,8 @@
 ;; make shell scripts executable on save
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
+;; better regex syntax
+(require 're-builder)
+(setq reb-re-syntax 'string)
+
 (provide 'bodhi-editor)
