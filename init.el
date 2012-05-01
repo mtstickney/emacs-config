@@ -37,5 +37,8 @@
 (require 'bodhi-org)
 (require 'bodhi-latex)
 
+;; change customizations file location
+(setq custom-file (concat bodhi-dir "custom.el"))
+
 (message "The flower of awakening unfolds. Proceed with Right Understanding, %s."
          (getenv "USER"))
