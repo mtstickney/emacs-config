@@ -10,7 +10,7 @@
                              (delete-file (concat buffer-file-name "c"))))))
 
   (defun bodhi-emacs-lisp-mode-defaults ()
-    (run-hooks 'bodhi-lisp-programming-hook)
+    (run-hooks 'bodhi-lisp-coding-hook)
     (turn-on-eldoc-mode)
     (eldoc-add-command
      'paredit-backward-delete
