@@ -25,17 +25,19 @@
 
 (defvar bodhi-snippets-dir (concat bodhi-dir "snippets/"))
 
-(require 'bodhi-keybinds) ;; key customizations
-;; (require 'bodhi-core) ;; utility functions
-;; (require 'bodhi-modes) ;; Mode customizations
 (require 'bodhi-packages)
 (require 'bodhi-ui) ;; UI customizations
+(require 'bodhi-core) ;; utility functions
+(require 'bodhi-mode) ;; Mode customizations
 (require 'bodhi-editor)
+(require 'bodhi-keybinds) ;; key customizations
 
 ;; Programming & markup setup
 (require 'bodhi-programming)
 (require 'bodhi-org)
 (require 'bodhi-latex)
+(require 'bodhi-common-lisp)
+(require 'bodhi-emacs-lisp)
 
 ;; change customizations file location
 (setq custom-file (concat bodhi-dir "custom.el"))
