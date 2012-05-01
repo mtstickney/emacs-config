@@ -85,5 +85,9 @@
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 
+;; tramp for sudo access (keep in mind zsh issues, see emacs wiki)
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
 
 (provide 'bodhi-editor)
