@@ -168,4 +168,8 @@
 ;; don't start a new frame for ediff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+
+;; abbrev setup
+(add-hook 'text-mode-hook 'bodhi-turn-on-abbrev)
+
 (provide 'bodhi-editor)
