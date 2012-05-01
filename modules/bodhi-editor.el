@@ -172,4 +172,7 @@
 ;; abbrev setup
 (add-hook 'text-mode-hook 'bodhi-turn-on-abbrev)
 
+;; make shell scripts executable on save
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
 (provide 'bodhi-editor)
