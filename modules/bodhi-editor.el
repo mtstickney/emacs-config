@@ -50,4 +50,15 @@
 (setq uniquify-after-kill-buffer-p t) ;; rename after killing uniquified
 (setq uniquify-ignore-buffers-re "^\\*") ;; don't change special buffers
 
+;; save some history to restore when files are opened
+(setq savehist-additional-variables
+      ;; save search history
+      '(search ring regexp-search-ring)
+      ;; save every minute
+      savehist-auto-save-interval 60
+      ;; keep $HOME clean
+      savehist-file (concat user-emacs-directory "savehist"))
+(savehist-mode t)
+
+
 (provide 'bodhi-editor)
