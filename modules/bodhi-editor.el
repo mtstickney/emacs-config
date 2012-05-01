@@ -103,5 +103,18 @@
 
 (set-default 'imenu-auto-rescan t)
 
+;; Use flyspell for spellchecking
+(setq ispell-program-name "aspell"
+      ispell-extra-args '("--sug-mode=ultra"))
+(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+
+;; force flyspell on (e.g. to use in hooks)
+(defun bodhi-turn-on-flyspell ()
+  (interactive)
+  (flyspell-mode +1))
+
+(add-hook 'message-mode-hook 'bodhi-turn-on-flyspell)
+(add-hook 'text-mode-hook 'bodhi-turn-on-flyspell)
+
 
 (provide 'bodhi-editor)
