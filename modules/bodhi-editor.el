@@ -162,4 +162,10 @@
 (defalias 'ack-find-file 'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
+;; reuse the same buffer in dired by pressing 'a'
+(put 'dired-find-alternate-file 'disabled nil)
+
+;; don't start a new frame for ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 (provide 'bodhi-editor)
