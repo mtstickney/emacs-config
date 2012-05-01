@@ -252,10 +252,4 @@
   (interactive)
   (byte-recompile-directory bodhi-dir 0))
 
-;; Function to open a daily journal entry in org-mode
-;; Uses org-journal-file and org-journal-date-format variables
-;; (see http://metajack.im/2009/01/01/journaling-with-emacs-orgmode/)
-(eval-after-load "org-install"
-)
-
 (provide 'bodhi-core)

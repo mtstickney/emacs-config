@@ -8,7 +8,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cj" 'org-journal-entry)
+(global-set-key "\C-cj" 'bodhi-org-journal-entry)
 
 ;; Default locations
 (setq org-directory
@@ -54,7 +54,6 @@
     (unless (= (current-column) 2)
       (insert "\n  --\n\n  "))))
 
-
 ;; Add "resume" class to LaTeX documents (requires 'res.sty' in current dir)
 (defun bodhi-new-org-latex-class (name doc-class &optional rest)
   "Return a new Org-mode LaTeX class, based on 'article' by default."
@@ -64,7 +63,7 @@
 
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classes
+(add-to-list 'org-export-latex-classpes
              (bodhi-new-org-latex-class "resume" "\\documentclass{res}"))
 
 (defun bodhi-org-mode-defaults ()
