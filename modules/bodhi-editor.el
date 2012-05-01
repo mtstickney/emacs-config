@@ -90,4 +90,10 @@
 (setq tramp-default-method "ssh")
 
 
+;; auto-completion in the minibuffer
+(icomplete-mode +1)
+
+(set-default 'imenu-auto-rescan t)
+
+
 (provide 'bodhi-editor)
