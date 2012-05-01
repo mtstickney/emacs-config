@@ -9,7 +9,9 @@
   ;; Note that slime is installed by quicklisp (version in the repo is
   ;; old)
   '(solarized-theme zenburn-theme paredit org auctex python go-mode
-                    fill-column-indicator rainbow-mode)
+                    fill-column-indicator rainbow-mode volatile-highlights
+                    ack-and-a-half expand-region gist helm helm-projectile magit
+                    magithub melpa yasnippet)
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
