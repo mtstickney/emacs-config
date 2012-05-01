@@ -5,6 +5,15 @@
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
+;; use ibuffer instead of buffer-menu
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(global-set-key (kbd "C-x g") 'magit-status)
+
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+
+
 
 
 (provide 'bodhi-keybinds)
