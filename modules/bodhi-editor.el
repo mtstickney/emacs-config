@@ -75,5 +75,15 @@
 (defadvice windmove-right (before other-window-now activate)
   (when (buffer-file-name) (save-buffer)))
 
+;; Subtly hilight matching parens (global)
+(show-paren-mode +1)
+(setq show-paren-style 'parenthesis)
+
+;; Hilight the current line
+(global-hl-line-mode +1)
+
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
+
 
 (provide 'bodhi-editor)
