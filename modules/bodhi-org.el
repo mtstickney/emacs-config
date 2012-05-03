@@ -63,7 +63,7 @@
 
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classpes
+(add-to-list 'org-export-latex-classes
              (bodhi-new-org-latex-class "resume" "\\documentclass{res}"))
 
 (defun bodhi-org-mode-defaults ()
