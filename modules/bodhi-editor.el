@@ -173,7 +173,7 @@
 (require 'midnight)
 
 ;; abbrev setup
-(add-hook 'text-mode-hook 'bodhi-turn-on-abbrev)
+(add-hook 'text-mode-hook 'bodhi-enable-abbrev)
 
 ;; make shell scripts executable on save
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
