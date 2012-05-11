@@ -10,12 +10,15 @@
       (eq system-type 'windows-nt)))
 
 ;; Keep everything under ~/emacs instead of .emacs.d
-(defvar bodhi-dir
-  (concat (if *on-windows*
-              "C:/Users/mts/"
-            "/home/mts/")
-          "emacs/")
-  "My home directory - root of all emacs configuration files")
+;; (defvar bodhi-dir
+;;   (concat (if *on-windows*
+;;               "C:/Users/mts/"
+;;             "/home/mts/")
+;;           "emacs/")
+;;   "My home directory - root of all emacs configuration files")
+(defvar bodhi-dir (if *on-windows*
+                      "~/.emacs.d/"
+                    "~/emacs/"))
 
 (labels ((add-path (p)
                    (add-to-list 'load-path
