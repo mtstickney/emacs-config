@@ -1,7 +1,7 @@
 ;; Packages setup and customization
 (require 'package)
-(dolist (repo '(("marmalade" . "http://marmalde-repo.org/packages/")
-		("melpa" . "http://melpa.milkbox.net/packages/")))
+(dolist (repo '(("marmalade" . "http://marmalade-repo.org/packages/")
+                ("melpa" . "http://melpa.milkbox.net/packages/")))
   (add-to-list 'package-archives repo t))
 (package-initialize)
 
