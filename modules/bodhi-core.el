@@ -19,7 +19,7 @@
   (interactive)
   (if (not (get-buffer "*ansi-term*"))
       (ansi-term "/bin/bash")
-    (switch-buffer "*ansi-term*")))
+    (switch-to-buffer "*ansi-term*")))
 
 ;; Some functions for copying blocks of code to the clipboard
 ;; formatted for pasting as snippets etc.
