@@ -1,4 +1,4 @@
-(require 'visual-basic-mode)
+(require 'vbnet-mode)
 
 ;; .vbs -- VBScript
 ;; .vb  -- Visual Basic .NET source
@@ -6,7 +6,6 @@
 ;; .frm -- Visual Basic form
 ;; .cls -- C++ class definition
 
-(loop for e in (list "\\.vbs\\'" "\\.vb\\'" "\\.bas\\'" "\\.frm\\'" "\\.cls\\'")
-      do (add-to-list 'auto-mode-alist (cons e 'visual-basic-mode)))
+(add-to-list 'auto-mode-alist '("\\.\\(vb\\|bas\\|frm\\|cls\\)$" . vbnet-mode))
 
 (provide 'bodhi-vbasic)
