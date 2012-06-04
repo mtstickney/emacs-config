@@ -18,7 +18,7 @@
       (if (looking-at electrify-return-match)
           (save-excursion (newline-and-indent)))
       (newline arg)
-      (indent-according to mode)))
+      (indent-according-to-mode)))
 
   (defun bodhi-lisp-coding-defaults ()
     (paredit-mode +1)
