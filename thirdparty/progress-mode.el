@@ -69,7 +69,7 @@
 
 (provide 'progress-mode)
 
-
+
 ;;;; Formatting definitions
 ;;
 ;; These definitions define the layout of idealized Progress code
