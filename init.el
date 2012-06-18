@@ -43,6 +43,7 @@
 (require 'bodhi-emacs-lisp)
 (require 'bodhi-progress)
 (require 'bodhi-vbasic)
+(require 'bodhi-deft)
 
 ;; change customizations file location
 (setq custom-file (concat bodhi-dir "custom.el"))

@@ -11,7 +11,7 @@
   '(solarized-theme zenburn-theme paredit org auctex python go-mode
                     fill-column-indicator rainbow-mode volatile-highlights
                     ack-and-a-half expand-region gist helm helm-projectile magit
-                    magithub melpa yasnippet)
+                    magithub melpa yasnippet deft fill-column-indicator)
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
