@@ -3,6 +3,9 @@
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 
+;; font selection
+(set-default-font "Monaco 10")
+
 ;; Setup for new frames
 ;; Remove the menubar, except on OSX (doesn't make sense)
 (defun bodhi-frame-config (frame)
