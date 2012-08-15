@@ -41,7 +41,6 @@
 (require 'bodhi-latex)
 (require 'bodhi-common-lisp)
 (require 'bodhi-emacs-lisp)
-(require 'bodhi-progress)
 (require 'bodhi-vbasic)
 (require 'bodhi-deft)
 
