@@ -1,7 +1,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(set-default-font "Liberation Mono 11")
+(set-default-font "Monaco 11")
 (setq inhibit-startup-screen t)
 (setq initial-frame-alist nil)
 ;; (setq (menu-bar-mode nil))
