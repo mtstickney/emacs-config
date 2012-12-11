@@ -8,7 +8,7 @@
 (defvar bodhi-packages
   ;; Note that slime is installed by quicklisp (version in the repo is
   ;; old)
-  '(solarized-theme zenburn-theme paredit org auctex python go-mode
+  '(solarized-theme zenburn-theme paredit org auctex python go-mode php-mode
                     fill-column-indicator rainbow-mode volatile-highlights
                     ack-and-a-half expand-region gist helm helm-projectile magit
                     magithub melpa yasnippet deft fill-column-indicator)
