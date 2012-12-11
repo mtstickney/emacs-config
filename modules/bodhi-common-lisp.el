@@ -29,7 +29,9 @@
     (setq slime-default-lisp 'ccl)
   (setq slime-default-lisp 'sbcl))
 
-(add-hook 'lisp-mode-hook (lambda () (run-hooks 'bodhi-lisp-coding-hook)))
+(add-hook 'lisp-mode-hook (lambda ()
+                            (bodhi-load-common-lisp-slime)
+                            (run-hooks 'bodhi-lisp-coding-hook)))
 (add-hook 'slime-repl-mode-hook (lambda () (run-hooks 'bodhi-interactive-lisp-coding-hook)))
 
 ;; start slime automatically when a lisp file is opened
