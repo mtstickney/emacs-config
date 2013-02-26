@@ -4,7 +4,9 @@
   (tool-bar-mode -1))
 
 ;; font selection
-(set-default-font "Monaco 10")
+(if *on-windows*
+    (set-default-font "Consolas 10")
+  (set-default-font "Monaco 10"))
 
 ;; Setup for new frames
 ;; Remove the menubar, except on OSX (doesn't make sense)
