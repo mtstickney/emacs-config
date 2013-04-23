@@ -44,7 +44,7 @@
         (isearch-forward nil))
     (end-of-buffer)
     (unless (org-goto-local-search-headings today nil t)
-      (org-insert-heading-respect-content)
+      (org-insert-heading-respect-content t)
       (insert today)
       (insert "\n\n  "))
     (org-show-entry)
