@@ -13,7 +13,7 @@
 ;; Default locations
 (setq org-directory
       (if *on-windows*
-          "C:/Users/mts/Dropbox/"
+          "~/Dropbox/"
         "~/sync/"))
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
