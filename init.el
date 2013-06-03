@@ -20,11 +20,11 @@
                       "~/.emacs.d/"
                     "~/emacs/"))
 
-(labels ((add-path (p)
-                   (add-to-list 'load-path
-                                (concat bodhi-dir p))))
-        (add-path "modules")
-        (add-path "thirdparty"))
+(cl-labels ((add-path (p)
+                      (add-to-list 'load-path
+                                   (concat bodhi-dir p))))
+  (add-path "modules")
+  (add-path "thirdparty"))
 
 (defvar bodhi-snippets-dir (concat bodhi-dir "snippets/"))
 
