@@ -34,6 +34,8 @@
   "Path to org-mode journal file")
 (defvar bodhi-org-journal-date-format "%d-%m-%Y"
   "Date format for journal headings")
+(defvar bodhi-org-journal-time-format "%H:%M:%S"
+  "Timestamp format for individual journal entries")
 
 (defun bodhi-org-journal-entry ()
   "Create a new diary entry for today or append to an existing one"
@@ -41,6 +43,7 @@
   (switch-to-buffer (find-file bodhi-org-journal-file))
   (widen)
   (let ((today (format-time-string bodhi-org-journal-date-format))
+        (now (format-time-string bodhi-org-journal-time-format))
         (isearch-forward nil))
     (end-of-buffer)
     (unless (org-goto-local-search-headings today nil t)
@@ -52,7 +55,12 @@
     (end-of-buffer)
     (backward-char 1)
     (unless (= (current-column) 2)
-      (insert "\n  --\n\n  "))))
+      (insert "\n")
+      (org-indent-line)
+      (insert "--\n")
+      (org-indent-line)
+      (insert now "\n\n")
+      (org-indent-line))))
 
 ;; Add "resume" class to LaTeX documents (requires 'res.sty' in current dir)
 (defun bodhi-new-org-latex-class (name doc-class &optional rest)
