@@ -6,7 +6,7 @@
 ;; font selection
 (if *on-windows*
     (set-default-font "Consolas 10")
-  (set-default-font "Monaco 10"))
+  (set-default-font "Monaco 10")) ;; might use "Liberation Mono 10"
 
 ;; Setup for new frames
 ;; Remove the menubar, except on OSX (doesn't make sense)
