@@ -20,10 +20,12 @@
 ;; selected from a list. Note that inferior-lisp-program is now
 ;; useless.
 (setq slime-lisp-implementations
-      '((ccl ("ccl"))
-        (clisp ("clisp" "-q"))
-        (cmucl ("cmucl" "-quiet"))
-        (sbcl ("sbcl" "--noinform") :coding-system utf-8-unix)))
+      (cons (if *on-windows*
+                '(ccl ("wx86cl"))
+                '(ccl ("ccl")))
+            '((clisp ("clisp" "-q"))
+              (cmucl ("cmucl" "-quiet"))
+              (sbcl ("sbcl" "--noinform") :coding-system utf-8-unix))))
 
 (if (eq system-type 'darwin)
     (setq slime-default-lisp 'ccl)
@@ -32,7 +34,8 @@
 (add-hook 'lisp-mode-hook (lambda ()
                             (bodhi-load-common-lisp-slime)
                             (run-hooks 'bodhi-lisp-coding-hook)))
-(add-hook 'slime-repl-mode-hook (lambda () (run-hooks 'bodhi-interactive-lisp-coding-hook)))
+(add-hook 'slime-repl-mode-hook (lambda ()
+                                  (run-hooks 'bodhi-interactive-lisp-coding-hook)))
 
 ;; start slime automatically when a lisp file is opened
 (defun bodhi-start-slime ()
