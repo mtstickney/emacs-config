@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: _SEQT table
+# key: _ST
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: command
+# --
+DROP TABLE _SEQT_${seqname};
+CREATE TABLE _SEQT_${seqname} (
+  initial_value bigint,
+  increment_value bigint,
+  upper_limit bigint,
+  current_value,
+  cycle bit not null
+);

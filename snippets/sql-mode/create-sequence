@@ -1,0 +1,22 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: create sequence
+# key: cseq
+# binding: direct-keybinding
+# expand-env: ((yas-indent-line nil))
+# type: snippet
+# --
+DROP SEQUENCE $1;
+CREATE SEQUENCE $1
+  INCREMENT ${2:1}
+  MINVALUE ${3:1}
+  ${4:NO MAXVALUE}
+  START ${5:1}
+  CACHE 1;
+ALTER TABLE $1
+  OWNER TO ${6:compass};
+CREATE OR REPLACE FUNCTION _SEQP_$1(OUT ret integer, IN op integer, INOUT value bigint)
+  RETURNS record AS $$
+        SELECT * from public.sequence_op('$1', op, value);
+$$ LANGUAGE sql;
+ALTER FUNCTION _SEQP_$1(integer, bigint)
+  OWNER TO $6;

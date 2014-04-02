@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: drop table
+# key: dt
+# binding: direct-keybinding
+# expand-env: ((some-var some-value))
+# type: snippet
+# --
+DROP TABLE IF EXISTS $1;

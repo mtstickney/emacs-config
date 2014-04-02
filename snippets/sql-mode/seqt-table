@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: _SEQT table
+# key: _ST
+# expand-env: ((yas-indent-line nil))
+# binding: direct-keybinding
+# --
+DROP TABLE "_SEQT_$1";
+CREATE TABLE "_SEQT_$1" (
+  initial_value bigint,
+  increment_value bigint,
+  upper_limit bigint,
+  current_value bigint,
+  cycle bit not null
+);
