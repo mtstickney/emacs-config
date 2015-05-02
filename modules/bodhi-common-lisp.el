@@ -25,7 +25,8 @@
                 '(ccl ("ccl")))
             '((clisp ("clisp" "-q"))
               (cmucl ("cmucl" "-quiet"))
-              (sbcl ("sbcl" "--noinform") :coding-system utf-8-unix))))
+              (sbcl ("sbcl" "--dynamic-space-size 2048 --noinform") :coding-system utf-8-unix)
+              (ecl ("ecl")))))
 
 (if (eq system-type 'darwin)
     (setq slime-default-lisp 'ccl)
