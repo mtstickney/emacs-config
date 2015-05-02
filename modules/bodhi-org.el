@@ -20,14 +20,14 @@
 (setq org-log-done t)
 (setq org-insert-heading-respect-content t)
 ;; Use latexmk to export latex to pdf so e.g. bibtex gets run
-(require 'org-latex)
+(require 'ox-latex)
 (setq org-latex-to-pdf-process '("latexmk -pdf -cd %f"))
 
 ;; Use the listings package to list code in latex
 (setq org-latex-export-listings t)
-(add-to-list 'org-export-latex-packages-alist '("" "listings"))
+(add-to-list 'org-latex-packages-alist '("" "listings"))
 ;; Now with color!
-(add-to-list 'org-export-latex-packages-alist '("" "color"))
+(add-to-list 'org-latex-packages-alist '("" "color"))
 
 ;; Journalling setup
 (defvar bodhi-org-journal-file (concat org-directory "journal.org")
@@ -65,13 +65,13 @@
 ;; Add "resume" class to LaTeX documents (requires 'res.sty' in current dir)
 (defun bodhi-new-org-latex-class (name doc-class &optional rest)
   "Return a new Org-mode LaTeX class, based on 'article' by default."
-  (let* ((article-body (cddr (assoc "article" org-export-latex-classes))))
+  (let* ((article-body (cddr (assoc "article" org-latex-classes))))
     (cons name (cons doc-class
                      (if rest rest article-body)))))
 
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classes
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+(add-to-list 'org-latex-classes
              (bodhi-new-org-latex-class "resume" "\\documentclass{res}"))
 
 (defun bodhi-org-mode-defaults ()
