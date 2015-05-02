@@ -41,6 +41,8 @@
 (require 'bodhi-latex)
 (require 'bodhi-common-lisp)
 (require 'bodhi-emacs-lisp)
+(require 'bodhi-haskell)
+
 (require 'bodhi-deft)
 
 ;; change customizations file location
