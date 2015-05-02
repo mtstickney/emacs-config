@@ -11,7 +11,7 @@
   '(solarized-theme zenburn-theme paredit org auctex python go-mode php-mode
                     fill-column-indicator rainbow-mode volatile-highlights
                     ack-and-a-half expand-region gist helm helm-projectile magit
-                    magithub melpa yasnippet deft fill-column-indicator
+                    magithub yasnippet deft fill-column-indicator
                     haskell-mode)
   "A list of packages to ensure are installed at launch.")
 
