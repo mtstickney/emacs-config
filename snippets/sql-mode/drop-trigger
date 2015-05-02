@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: drop trigger
+# key: dti
+# binding: direct-keybinding
+# type: snippet
+# --
+DROP TRIGGER ${1:IF EXISTS} $2;

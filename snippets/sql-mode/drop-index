@@ -2,7 +2,6 @@
 # name: drop index
 # key: di
 # binding: direct-keybinding
-# expand-env: ((some-var some-value))
 # type: snippet
 # --
 DROP INDEX ${1:IF EXISTS} $2;

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: alter table owner
+# key: ato
+# binding: direct-keybinding
+# type: snippet
+# --
+ALTER TABLE $1 OWNER TO ${2:compass};
