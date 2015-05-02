@@ -66,7 +66,7 @@
 (which-func-mode 1)
 
 ;; Most programming modes derive from prog-mode in Emacs 24;
-;; for modes that don't, bodh-prog-mode-hook will be run directly.
+;; for modes that don't, bodhi-prog-mode-hook will be run directly.
 ;; To modify these defaults, add you own prog-mode hook like so:
 ;;       (add-hook 'bodhi-prog-mode-hook 'my-prog-mode-mods t)
 ;; (the final 't' sets the *append* argument)
