@@ -53,7 +53,6 @@
     (org-show-entry)
     (org-narrow-to-subtree)
     (end-of-buffer)
-    (backward-char 1)
     (unless (= (current-column) 2)
       (insert "\n")
       (org-indent-line)
