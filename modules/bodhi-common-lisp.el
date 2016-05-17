@@ -3,7 +3,9 @@
 ;; SBCL config file and .stumpwmrc are lisp files
 (loop for m in (list
                 '("\\.sbclrc$" . lisp-mode)
-                '("\\.stumpwmrc$" . lisp-mode))
+                '("\\.stumpwmrc$" . lisp-mode)
+                '("\\.eclrc$" . lisp-mode)
+                '("\\.clisprc$" . lisp-mode))
       do (add-to-list 'auto-mode-alist m))
 
 ;; Use SLIME from quicklisp
