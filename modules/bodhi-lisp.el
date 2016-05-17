@@ -1,4 +1,3 @@
-
 ;; Common code for lisp modes (see bodhi-common-lisp and bodhi-emacs-lisp)
 (progn
   (define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
