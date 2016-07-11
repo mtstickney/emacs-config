@@ -66,7 +66,7 @@ interlock files properly."
 ;; save some history to restore when files are opened
 (setq savehist-additional-variables
       ;; save search history
-      '(search ring regexp-search-ring)
+      '(search-ring regexp-search-ring)
       ;; save every minute
       savehist-auto-save-interval 60
       ;; keep $HOME clean
