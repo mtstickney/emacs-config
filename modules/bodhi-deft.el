@@ -1,4 +1,3 @@
-(require 'deft)
 
 ;; Use org-mode as the text format
 (setq deft-extensions '("org" "txt" "text" "md" "markdown"))

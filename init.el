@@ -35,6 +35,10 @@
 
 (defvar bodhi-snippets-dir (concat bodhi-dir "snippets/"))
 
+;; This must be loaded before the deft package is loaded in order for
+;; variables to be set correctly.
+(require 'bodhi-deft)
+
 (require 'bodhi-packages)
 (require 'bodhi-ui) ;; UI customizations
 (require 'bodhi-core) ;; utility functions
@@ -50,8 +54,6 @@
 (require 'bodhi-emacs-lisp)
 (require 'bodhi-haskell)
 (require 'bodhi-web)
-
-(require 'bodhi-deft)
 
 ;; change customizations file location
 (setq custom-file (concat bodhi-dir "custom.el"))
