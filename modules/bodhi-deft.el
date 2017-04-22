@@ -6,6 +6,10 @@
 (setq deft-directory (if (file-exists-p "~/Dropbox")
                         "~/Dropbox/notes"
                       "~/sync/notes"))
+;; Don't use the timestamp-based default format. This is a) different
+;; than all the other notes files we have, and b) broken on windows
+;; because a colon in a filename denotes an alternate NTFS stream.
+(setq deft-new-file-format "deft")
 
 ;; global notes key
 (global-set-key [f8] 'deft)
