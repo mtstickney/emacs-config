@@ -1,7 +1,7 @@
 (require 'deft)
 
 ;; Use org-mode as the text format
-(setq deft-extension "org")
+(setq deft-extensions '("org" "txt" "text" "md" "markdown"))
 (setq deft-text-mode 'org-mode)
 (setq deft-directory (if (file-exists-p "~/Dropbox")
                         "~/Dropbox/notes"
