@@ -52,6 +52,8 @@
   (define-key slime-repl-mode-map
     (read-kbd-macro paredit-backward-delete-key) nil))
 
+(add-hook 'slime-repl-mode-hook 'bodhi-override-slime-repl-bindings-with-paredit)
+
 (eval-after-load "slime"
   '(progn
      (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol
