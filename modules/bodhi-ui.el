@@ -59,6 +59,6 @@
 ;;            'solarized-dark)
 ;;          t)
 (if (display-graphic-p)
-    (load-theme 'solarized-light t))
+    (load-theme 'solarized-dark t))
 
 (provide 'bodhi-ui)
