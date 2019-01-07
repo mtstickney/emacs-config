@@ -54,6 +54,7 @@
 (require 'bodhi-emacs-lisp)
 (require 'bodhi-haskell)
 (require 'bodhi-web)
+(require 'bodhi-javascript)
 
 ;; change customizations file location
 (setq custom-file (concat bodhi-dir "custom.el"))

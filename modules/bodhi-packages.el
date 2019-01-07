@@ -12,7 +12,8 @@
                     fill-column-indicator rainbow-mode volatile-highlights
                     expand-region gist helm helm-projectile magit
                     yasnippet deft fill-column-indicator
-                    haskell-mode web-mode)
+                    haskell-mode web-mode
+                    web-beautify js2-mode js2-refactor xref-js2)
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
