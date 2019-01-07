@@ -11,10 +11,7 @@
 (global-set-key "\C-cj" 'bodhi-org-journal-entry)
 
 ;; Default locations
-(setq org-directory
-      (if *on-windows*
-          "~/Dropbox/"
-        "~/sync/"))
+(setq org-directory "~/Sync/")
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
 (setq org-log-done t)
