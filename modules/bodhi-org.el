@@ -29,7 +29,7 @@
 ;; Journalling setup
 (defvar bodhi-org-journal-file (concat org-directory "journal.org")
   "Path to org-mode journal file")
-(defvar bodhi-org-journal-date-format "%d-%m-%Y"
+(defvar bodhi-org-journal-date-format "%Y-%m-%d"
   "Date format for journal headings")
 (defvar bodhi-org-journal-time-format "%H:%M:%S"
   "Timestamp format for individual journal entries")
