@@ -3,6 +3,7 @@
 ;; Use ido menu (used for buffer switching) and imenu to navigate to
 ;; functions/vars/symbols
 (require 'imenu)
+
 (defun bodhi-ido-goto-symbol (&optional symbol-list)
   "Refresh imenu and jump to a place with Ido."
   (interactive)
