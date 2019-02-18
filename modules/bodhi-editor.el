@@ -36,6 +36,16 @@ interlock files properly."
       (save-buffer)))
 (add-hook 'auto-save-hook 'auto-save-buffer)
 
+;; No bings on failed searches, dammit.
+;; (setq ring-bell-function 'ignore)
+(setq ring-bell-function
+      (lambda ()
+        (let ((orig-fg (face-foreground 'mode-line)))
+          (set-face-foreground 'mode-line "#F2804F")
+          (run-with-idle-timer 0.1 nil
+                               (lambda (fg) (set-face-foreground 'mode-line fg))
+                               orig-fg))))
+
 ;; Smart indenting and pairing
 (electric-pair-mode t)
 (electric-indent-mode t)
