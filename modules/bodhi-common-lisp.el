@@ -30,6 +30,9 @@
               (sbcl ("sbcl" "--dynamic-space-size 2048 --noinform") :coding-system utf-8-unix)
               (ecl ("ecl")))))
 
+;; Load the normal fancy contribs and the ANSI color contrib.
+(setq slime-contribs '(slime-fancy slime-repl-ansi-color))
+
 (if (eq system-type 'darwin)
     (setq slime-default-lisp 'ccl)
   (setq slime-default-lisp 'sbcl))
