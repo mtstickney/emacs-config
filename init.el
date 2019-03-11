@@ -56,9 +56,6 @@
 (require 'bodhi-web)
 (require 'bodhi-javascript)
 
-;; ANSI terminal colors in slime.
-(require 'slime-repl-ansi-color)
-
 ;; change customizations file location
 (setq custom-file (concat bodhi-dir "custom.el"))
 
