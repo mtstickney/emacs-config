@@ -19,7 +19,7 @@
 
 ;; Auto-save directly to the actual file, instead of separately
 (setq auto-save-file-name-transforms nil)
-(setq auto-save-visited-file-name t)
+(auto-save-visited-mode)
 ;; This used to be 3 seconds, but that produces magic behavior on Windows
 (setq auto-save-timeout 4) ;; every 4 seconds
 (setq auto-save-interval 100) ;; ...or 100 chars, whichever comes first
