@@ -24,18 +24,6 @@
 (setq auto-save-timeout 4) ;; every 4 seconds
 (setq auto-save-interval 100) ;; ...or 100 chars, whichever comes first
 
-;; Bug #20659, auto-save doesn't properly dispose of interlock files.
-(defun auto-save-buffer ()
-  "Save the current buffer when auto-save triggers. This is
-useful because the normal auto-save mechanism doesn't clear
-interlock files properly."
-  (interactive)
-  ;; These checks may already be done by the auto-save machinery, but meh.
-  (if (and (buffer-file-name)
-           (buffer-modified-p))
-      (save-buffer)))
-(add-hook 'auto-save-hook 'auto-save-buffer)
-
 ;; No bings on failed searches, dammit.
 ;; (setq ring-bell-function 'ignore)
 (setq ring-bell-function
