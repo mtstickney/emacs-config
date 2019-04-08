@@ -62,8 +62,8 @@
      (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol
            slime-fuzzy-completion-in-place t
            slime-enable-evaluate-in-emacs t
-           slime-autodoc-use-multiline-p t)
-     (define-key slime-mode-map (kbd "TAB") 'slime-indent-and-complete-symbol)
+           slime-autodoc-use-multiline-p t
+           tab-always-indent 'complete)
      (define-key slime-mode-map (kbd "C-c i") 'slime-inspect)
      (define-key slime-mode-map (kbd "C-c C-s") 'slime-selector)))
 
