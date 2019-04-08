@@ -54,6 +54,14 @@
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
 
+;; Use company-mode for completions.
+(global-company-mode)
+;; Use the usual navigation keys in the completions window.
+(define-key company-active-map (kbd "\C-n") 'company-select-next)
+(define-key company-active-map (kbd "\C-p") 'company-select-previous)
+(define-key company-active-map (kbd "\C-d") 'company-show-doc-buffer)
+(define-key company-active-map (kbd "M-.") 'company-show-location)
+
 ;; Meaningful names for buffers with the same name
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)

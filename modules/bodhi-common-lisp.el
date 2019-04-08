@@ -31,7 +31,7 @@
               (ecl ("ecl")))))
 
 ;; Load the normal fancy contribs and the ANSI color contrib.
-(setq slime-contribs '(slime-fancy slime-repl-ansi-color))
+(setq slime-contribs '(slime-fancy slime-repl-ansi-color slime-company))
 
 (if (eq system-type 'darwin)
     (setq slime-default-lisp 'ccl)
@@ -62,8 +62,9 @@
      (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol
            slime-fuzzy-completion-in-place t
            slime-enable-evaluate-in-emacs t
-           slime-autodoc-use-multiline-p t
-           tab-always-indent 'complete)
+           slime-autodoc-use-multiline-p t)
+     (define-key slime-mode-map (kbd "TAB") 'company-indent-or-complete-common)
+     (define-key slime-repl-mode-map (kbd "TAB") 'company-indent-or-complete-common)
      (define-key slime-mode-map (kbd "C-c i") 'slime-inspect)
      (define-key slime-mode-map (kbd "C-c C-s") 'slime-selector)))
 
