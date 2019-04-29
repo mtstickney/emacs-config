@@ -9,6 +9,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cj" 'bodhi-org-journal-entry)
+(global-set-key "\C-cm" 'bodhi-org-project-journal-entry)
 
 ;; Default locations
 (setq org-directory "~/Sync/")
@@ -48,6 +49,41 @@
       (insert today))
     (org-show-entry)
     (org-narrow-to-subtree)
+    (end-of-buffer)
+    (insert "\n")
+    (org-indent-line)
+    (insert now "\n")
+    (org-indent-line)
+    (insert "--\n")
+    (org-indent-line)))
+
+;; WIP: has some bugs, maybe due to problems with org-mode
+;; (ORG-GOTO-LOCAL-SEARCH-HEADINGS doesn't work if you call it twice
+;; in a row for some reason.
+(defun bodhi-org-project-journal-entry ()
+  "Create a new diary entry for today or append to an existing one in the current file."
+  (interactive)
+  (widen)
+  (let ((today (format-time-string bodhi-org-journal-date-format))
+        (now (format-time-string bodhi-org-journal-time-format))
+        (isearch-forward nil))
+    (end-of-buffer)
+    (message "Today: %s" today)
+    (unless (org-goto-local-search-headings "Journal" nil t)
+      (org-insert-heading-respect-content t)
+      (insert "Journal")
+      (let ((lvl (org-current-level)))
+        (dotimes (i (- lvl 1))
+          (org-promote)))
+      (insert "\n"))
+    (message "doing the second search.")
+    (let ((result (org-goto-local-search-headings today nil t)))
+      (message "Result: %s" result)
+      (unless result
+        (org-insert-subheading 0)
+        (insert today)
+        ))
+    (org-show-entry)
     (end-of-buffer)
     (insert "\n")
     (org-indent-line)
