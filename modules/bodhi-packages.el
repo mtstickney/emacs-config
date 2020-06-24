@@ -14,7 +14,9 @@
                     yasnippet deft fill-column-indicator
                     haskell-mode web-mode
                     web-beautify js2-mode js2-refactor xref-js2
-                    company slime-company)
+                    company slime-company
+                    writeroom-mode
+                    markdown-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
