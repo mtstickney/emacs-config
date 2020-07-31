@@ -203,4 +203,12 @@
 ;; enable Bodhi keybindings
 (bodhi-global-mode t)
 
+;; Globally swap () and [].
+(defun swap-keys (key1 key2)
+  (keyboard-translate key1 key2)
+  (keyboard-translate key2 key1))
+
+(swap-keys ?\( ?\[)
+(swap-keys ?\) ?\])
+
 (provide 'bodhi-editor)
