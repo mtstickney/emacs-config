@@ -20,8 +20,8 @@
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
-  (reduce (lambda (a b) (and a b))
-   (map 'list #'package-installed-p bodhi-packages)))
+  (cl-reduce (lambda (a b) (and a b))
+   (cl-map 'list #'package-installed-p bodhi-packages)))
 
 (unless (bodhi-packages-installed-p)
   ;; Check for new packages (new versions)

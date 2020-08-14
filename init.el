@@ -7,7 +7,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(require 'cl)
+(require 'cl-lib)
 
 (message "Bodhi approaches... Patience, %s."
          (getenv "USER"))
