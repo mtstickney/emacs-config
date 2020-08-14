@@ -1,6 +1,32 @@
 ;; Emacs24 Initialization file
 ;; The File Formerly Known As .emacs
 
+(defun vercmp (a b)
+  "Compare two lists of version components. Returns 0 if they are
+they same version, 1 if A is a newer version than B, and -1 if B
+is a newer version than A. Version components not included in the
+list are assumed to be 0."
+  (let ((cmp1 (or (cl-first a) 0))
+        (cmp2 (or (cl-first b) 0)))
+    (cond
+     ;; same length, all equal elements (or we'd have returned earlier).
+     ((and (null a) (null b)) 0)
+     ((< cmp1 cmp2) -1)
+     ((> cmp1 cmp2) 1)
+     (t (vercmp (cl-rest a) (cl-rest b))))))
+
+(defun emacs-ver< (target)
+  (< (vercmp (list emacs-major-version emacs-minor-version) target)
+     0))
+
+(defun emacs-ver> (target)
+  (> (vercmp (list emacs-major-version emacs-minor-version) target)
+     0))
+
+(defun emacs-ver= (target)
+  (= (vercmp (list emacs-major-version emacs-minor-version) target)
+     0))
+
 (require 'cl-lib)
 
 (message "Bodhi approaches... Patience, %s."
