@@ -44,7 +44,7 @@
         (now (format-time-string bodhi-org-journal-time-format))
         (isearch-forward nil))
     (end-of-buffer)
-    (unless (org-goto-local-search-headings today nil t)
+    (unless (re-search-backward (concat "^\\* " today) nil t)
       (org-insert-heading-respect-content t)
       (insert today))
     (org-show-entry)
@@ -57,9 +57,6 @@
     (insert "--\n")
     (org-indent-line)))
 
-;; WIP: has some bugs, maybe due to problems with org-mode
-;; (ORG-GOTO-LOCAL-SEARCH-HEADINGS doesn't work if you call it twice
-;; in a row for some reason.
 (defun bodhi-org-project-journal-entry ()
   "Create a new diary entry for today or append to an existing one in the current file."
   (interactive)
@@ -67,22 +64,19 @@
   (let ((today (format-time-string bodhi-org-journal-date-format))
         (now (format-time-string bodhi-org-journal-time-format))
         (isearch-forward nil))
-    (end-of-buffer)
-    (message "Today: %s" today)
-    (unless (org-goto-local-search-headings "Journal" nil t)
+    (goto-char (point-max))
+    (unless (re-search-backward "^\\* Journal" nil t)
       (org-insert-heading-respect-content t)
       (insert "Journal")
       (let ((lvl (org-current-level)))
         (dotimes (i (- lvl 1))
           (org-promote)))
       (insert "\n"))
-    (message "doing the second search.")
-    (let ((result (org-goto-local-search-headings today nil t)))
-      (message "Result: %s" result)
+    (goto-char (point-max))
+    (let ((result (re-search-backward (concat "^\\*\\* " today) nil t)))
       (unless result
         (org-insert-subheading 0)
-        (insert today)
-        ))
+        (insert today)))
     (org-show-entry)
     (end-of-buffer)
     (insert "\n")
