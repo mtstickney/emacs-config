@@ -12,7 +12,7 @@
 (global-set-key "\C-cm" 'bodhi-org-project-journal-entry)
 
 ;; Default locations
-(setq org-directory "~/Sync/")
+(setq org-directory "~/Sync/core/")
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
 (setq org-log-done t)
