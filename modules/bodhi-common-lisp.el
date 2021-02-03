@@ -64,8 +64,11 @@
            slime-enable-evaluate-in-emacs t
            slime-autodoc-use-multiline-p t)
      (define-key slime-mode-map (kbd "TAB") 'company-indent-or-complete-common)
-     (define-key slime-repl-mode-map (kbd "TAB") 'company-indent-or-complete-common)
      (define-key slime-mode-map (kbd "C-c i") 'slime-inspect)
      (define-key slime-mode-map (kbd "C-c C-s") 'slime-selector)))
+
+(eval-after-load "slime-repl"
+  '(progn
+     (define-key slime-repl-mode-map (kbd "TAB") 'company-indent-or-complete-common)))
 
 (provide 'bodhi-common-lisp)
