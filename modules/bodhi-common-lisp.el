@@ -61,4 +61,8 @@
   '(progn
      (define-key slime-repl-mode-map (kbd "TAB") 'company-indent-or-complete-common)))
 
+(eval-after-load "slime-company"
+  '(progn
+     (setq slime-company-completion 'fuzzy)))
+
 (provide 'bodhi-common-lisp)
