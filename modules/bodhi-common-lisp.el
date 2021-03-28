@@ -8,15 +8,6 @@
                 '("\\.clisprc$" . lisp-mode))
       do (add-to-list 'auto-mode-alist m))
 
-;; Use SLIME from quicklisp
-(defun bodhi-load-common-lisp-slime ()
-  (interactive)
-  (let ((slime-helper-file
-         (expand-file-name "~/quicklisp/slime-helper.el")))
-    (if (file-exists-p slime-helper-file)
-        (load-file slime-helper-file)
-      (message "%s" "SLIME is not installed. Use Quicklisp to install it."))))
-
 ;; A list of possible Lisp implementations for SLIME. If SLIME is
 ;; invoked with a negative prefix (M-- M-x slime) the program can be
 ;; selected from a list. Note that inferior-lisp-program is now
@@ -38,7 +29,6 @@
   (setq slime-default-lisp 'sbcl))
 
 (add-hook 'lisp-mode-hook (lambda ()
-                            (bodhi-load-common-lisp-slime)
                             (run-hooks 'bodhi-lisp-coding-hook)))
 (add-hook 'slime-repl-mode-hook (lambda ()
                                   (run-hooks 'bodhi-interactive-lisp-coding-hook)))
