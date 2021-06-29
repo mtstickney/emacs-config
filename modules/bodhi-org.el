@@ -15,6 +15,9 @@
 (setq org-directory "~/Sync/core/")
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
+;; Include the gtd file in agendas.
+(add-to-list 'org-agenda-files (concat org-directory "gtd_playground.org"))
+
 (setq org-log-done t)
 (setq org-insert-heading-respect-content t)
 ;; Use latexmk to export latex to pdf so e.g. bibtex gets run
