@@ -1,4 +1,5 @@
 ;; Org-mode customizations file
+(require 'org)
 
 ;; Use the mode for .org files
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -96,8 +97,6 @@
     (cons name (cons doc-class
                      (if rest rest article-body)))))
 
-(unless (boundp 'org-latex-classes)
-  (setq org-latex-classes nil))
 (add-to-list 'org-latex-classes
              (bodhi-new-org-latex-class "resume" "\\documentclass{res}"))
 
