@@ -97,6 +97,11 @@
     (cons name (cons doc-class
                      (if rest rest article-body)))))
 
+;; Formatter to write a default clocktable with units in hours.
+(defun bodhi-write-hour-clocktable (&rest args)
+  (let ((org-duration-format 'h:mm))
+    (apply 'org-clocktable-write-default args)))
+
 (add-to-list 'org-latex-classes
              (bodhi-new-org-latex-class "resume" "\\documentclass{res}"))
 
