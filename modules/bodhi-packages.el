@@ -19,7 +19,8 @@
                     slime
                     company slime-company
                     writeroom-mode
-                    markdown-mode edit-indirect)
+                    markdown-mode edit-indirect
+                    elm-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun bodhi-packages-installed-p ()
