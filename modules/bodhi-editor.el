@@ -205,10 +205,10 @@
 
 ;; Globally swap () and [].
 (defun swap-keys (key1 key2)
-  (keyboard-translate key1 key2)
-  (keyboard-translate key2 key1))
+  (define-key key-translation-map (kbd key1) (kbd key2))
+  (define-key key-translation-map (kbd key2) (kbd key1)))
 
-(swap-keys ?\( ?\[)
-(swap-keys ?\) ?\])
+(swap-keys "(" "[")
+(swap-keys ")" "]")
 
 (provide 'bodhi-editor)
