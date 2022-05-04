@@ -19,8 +19,14 @@
 ;; Include the gtd file in agendas.
 (add-to-list 'org-agenda-files (concat org-directory "gtd_playground.org"))
 
+;;; Basic editing settings.
+;; include completion timestamps for TODOs
 (setq org-log-done t)
+;; don't insert headings in the middle of a subtree (add them afterwards).
 (setq org-insert-heading-respect-content t)
+;; adjust paragraph filling/indent/etc. to match headline depth
+(setq org-adapt-indentation t)
+
 ;; Use latexmk to export latex to pdf so e.g. bibtex gets run
 (require 'ox-latex)
 (setq org-latex-to-pdf-process '("latexmk -pdf -cd %f"))
