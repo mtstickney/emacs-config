@@ -64,7 +64,7 @@
 
 ;; Show the name of the current function in the modeline
 (require 'which-func)
-(which-func-mode 1)
+(which-function-mode 1)
 
 ;; Most programming modes derive from prog-mode in Emacs 24;
 ;; for modes that don't, bodhi-prog-mode-hook will be run directly.
