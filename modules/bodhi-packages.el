@@ -16,7 +16,7 @@
                     haskell-mode web-mode
                     web-beautify js2-mode js2-refactor xref-js2
                     slime
-                    company slime-company
+                    company slime-company slime-repl-ansi-color
                     writeroom-mode
                     markdown-mode edit-indirect
                     elm-mode)
