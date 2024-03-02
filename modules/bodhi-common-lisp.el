@@ -1,7 +1,7 @@
 (require 'bodhi-lisp)
 
 ;; SBCL config file and .stumpwmrc are lisp files
-(loop for m in (list
+(cl-loop for m in (list
                 '("\\.sbclrc$" . lisp-mode)
                 '("\\.stumpwmrc$" . lisp-mode)
                 '("\\.eclrc$" . lisp-mode)
