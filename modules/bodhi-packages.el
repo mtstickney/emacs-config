@@ -1,7 +1,6 @@
 ;; Packages setup and customization
 (require 'package)
-(dolist (repo '(("marmalade" . "https://marmalade-repo.org/packages/")
-                ("melpa" . "http://melpa.org/packages/")))
+(dolist (repo '(("melpa" . "https://melpa.org/packages/")))
   (add-to-list 'package-archives repo t))
 (package-initialize)
 
