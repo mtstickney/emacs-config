@@ -36,7 +36,15 @@
 ;; start slime automatically when a lisp file is opened
 (defun bodhi-start-slime ()
   (unless (slime-connected-p)
-    (save-excursion (slime))))
+    ;; This is functional, but could be a bit better by only doing
+    ;; this on the first call instead of for the duration. Simpler
+    ;; this way, tho.
+    (cl-letf (((symbol-function 'pop-to-buffer)
+               ;; TODO: get this to prefer a vertical split. Sometimes
+               ;; horizontal is the right thing, but less often than
+               ;; vertical.
+               (lambda (&rest args) (apply #'display-buffer args))))
+      (save-excursion (slime)))))
 
 (add-hook 'slime-mode-hook 'bodhi-start-slime)
 
