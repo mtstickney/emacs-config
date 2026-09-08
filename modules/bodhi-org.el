@@ -37,6 +37,13 @@
 ;; Now with color!
 (add-to-list 'org-latex-packages-alist '("" "color"))
 
+;; Enable support for the letter class
+(add-to-list 'org-latex-classes
+             '("letter" "\\documentclass{letter}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection{%s}")))
+
 ;; Journalling setup
 (defvar bodhi-org-journal-file (concat org-directory "journal.org")
   "Path to org-mode journal file")
