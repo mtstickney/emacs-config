@@ -56,6 +56,9 @@
 
 ;; Use company-mode for completions.
 (global-company-mode)
+;; ...but don't offer completions unless they are asked for.
+(setq company-idle-delay nil)
+(define-key company-mode-map (kbd "C-M-i") 'company-complete-common)
 ;; Use the usual navigation keys in the completions window.
 (define-key company-active-map (kbd "\C-n") 'company-select-next)
 (define-key company-active-map (kbd "\C-p") 'company-select-previous)
