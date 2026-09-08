@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (require 'bodhi-lisp)
 
 ;; SBCL config file and .stumpwmrc are lisp files

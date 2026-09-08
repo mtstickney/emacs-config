@@ -1,4 +1,4 @@
-;; Common code for lisp modes (see bodhi-common-lisp and bodhi-emacs-lisp)
+;; Common code for lisp modes (see bodhi-common-lisp and bodhi-emacs-lisp)  -*- lexical-binding: t; -*-
 (progn
   (define-key read-expression-map (kbd "TAB") 'completion-at-point)
 

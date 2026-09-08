@@ -1,4 +1,4 @@
-;; Use org-mode as the text format
+;; Use org-mode as the text format  -*- lexical-binding: t; -*-
 (setq deft-extensions '("org" "txt" "text" "md" "markdown"))
 (setq deft-text-mode 'org-mode)
 (setq deft-directory "~/Sync/core/notes")

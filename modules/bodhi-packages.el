@@ -1,4 +1,4 @@
-;; Packages setup and customization
+;; Packages setup and customization  -*- lexical-binding: t; -*-
 (require 'package)
 (dolist (repo '(("melpa" . "https://melpa.org/packages/")))
   (add-to-list 'package-archives repo t))

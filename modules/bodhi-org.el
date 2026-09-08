@@ -1,4 +1,4 @@
-;; Org-mode customizations file
+;; Org-mode customizations file  -*- lexical-binding: t; -*-
 (require 'org)
 
 ;; Use the mode for .org files

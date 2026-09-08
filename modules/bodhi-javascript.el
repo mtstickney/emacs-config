@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (require 'js2-mode)
 (require 'web-beautify)
 (require 'js2-refactor)

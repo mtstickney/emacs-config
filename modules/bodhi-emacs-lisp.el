@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (progn
   (require 'bodhi-lisp)
 

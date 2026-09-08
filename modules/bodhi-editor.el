@@ -1,4 +1,4 @@
-;; Editor behavior customizations file
+;; Editor behavior customizations file  -*- lexical-binding: t; -*-
 ;; customization group
 (defgroup editor nil
   "Emacs Bodhi Editor enhancements"
@@ -159,7 +159,8 @@
 
 ;; projectile is a project management system
 (require 'projectile)
-(projectile-global-mode t)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'helm-misc)
 (require 'helm-projectile)

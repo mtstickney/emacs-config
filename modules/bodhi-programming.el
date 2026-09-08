@@ -1,4 +1,4 @@
-;; Generic programming enhancements file
+;; Generic programming enhancements file  -*- lexical-binding: t; -*-
 
 ;; Use ido menu (used for buffer switching) and imenu to navigate to
 ;; functions/vars/symbols

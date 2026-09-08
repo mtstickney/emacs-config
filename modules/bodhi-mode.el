@@ -1,4 +1,4 @@
-;; Bodhi minor-mode
+;; Bodhi minor-mode  -*- lexical-binding: nil; -*-
 
 (defvar bodhi-mode-map
   (let ((map (make-sparse-keymap)))

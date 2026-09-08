@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defun bodhi-haskell-mode-hook ()
   (run-hooks 'bodhi-prog-mode-hook)
   (subword-mode +1)

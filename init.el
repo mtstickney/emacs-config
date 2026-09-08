@@ -1,4 +1,4 @@
-;; Emacs24 Initialization file
+;; Emacs24 Initialization file  -*- lexical-binding: t; -*-
 ;; The File Formerly Known As .emacs
 
 (defun vercmp (a b)

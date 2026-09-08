@@ -1,4 +1,4 @@
-;; UI enhancements file
+;; UI enhancements file  -*- lexical-binding: nil; -*-
 ;; No toolbar
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))

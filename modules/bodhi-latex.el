@@ -1,4 +1,4 @@
-;; LaTeX configuration file
+;; LaTeX configuration file  -*- lexical-binding: t; -*-
 
 ;; AUCTeX configuration
 (setq TeX-auto-save t)
